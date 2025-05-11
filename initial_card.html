@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Card Page</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Initial Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html" class="nav-title">djApp</a>
-    <div class="nav-right">
-        <a href="profile.html" class="profile-icon" aria-label="Profile">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ff69b4" viewBox="0 0 24 24">
-              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-            </svg>
-          </a>
+    <nav class="navbar">
+        <a href="/" class="nav-title">djApp</a>
+        <div class="nav-right">
+            <a href="profile.html" class="profile-icon" aria-label="Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ff69b4" viewBox="0 0 24 24">
+                    <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <img src="" alt="Album Cover" class="card-image">
+                <div class="card-text">
+                    <div class="song-title">Song Title</div>
+                    <div class="artist-name">Artist Name</div>
+                    <div class="song-details">
+                        <div class="detail-item">
+                            <span class="detail-label">BPM:</span>
+                            <span class="detail-value">120</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Key:</span>
+                            <span class="detail-value">C Major</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Duration:</span>
+                            <span class="detail-value">3:45</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="start-set-btn" onclick="window.location.href='in_set.html'">Start Set</button>
+        <div class="dj-background">
+            <img src="dj_bg2.png" alt="DJ Background" class="dj-bg-image">
+        </div>
     </div>
-  </nav>
-  <div class="card">
-    <div class="card-content">
-      <img src="placeholder-image.jpg" alt="Placeholder Image" class="card-image" />
-      <div class="card-text">
-        <h2 class="song-title">Current Song</h2>
-        <p class="artist-name">Artist</p>
-      </div>
-    </div>
-  </div>
-  <a href="in_set.html" class="nav-title"><button class="start-set-btn">Start Set</button></a>
-  <img src="dj_bg2.png" alt="DJ guy" width = "600" class="bottom-image">
 </body>
-</html>
+</html> 
