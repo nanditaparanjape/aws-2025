@@ -7,13 +7,13 @@ export const SearchBar = () => {
     const [input, setInput] = useState("")
 
     const fetchData = (value) => {
-        
+
     }
 
   return (
     <div className="input-wrapper">
       <FaSearch id="search-icon" />
-      <input placeholder="Type to search..." value = {input} onChange={(e) => setInput(e.target.value)}/>
+      <input placeholder="Enter a song!" value = {input} onChange={(e) => setInput(e.target.value)}/>
     </div>
   );
 };
