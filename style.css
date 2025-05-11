@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,37 +71,6 @@ body {
     background-color: #FF00A2;
     color: #ffffff;
   }
-=======
-  background-color: #303030;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.center-container {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-top: -200px;
-}
-
-.textbox {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: 2px solid #FF00A2;
-  border-radius: 8px;
-  width: 300px;
-  outline: none;
-  box-shadow: none;
-}
->>>>>>> b698e15961612dba5ddbe0977a361b0abff32d93
 
 .submit-btn {
   padding: 10px 20px;
