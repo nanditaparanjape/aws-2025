@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="nav-title">djApp</a>
+        <a href="/" class="nav-title">SpinFluence</a>
         <div class="nav-right">
             <a href="profile.html" class="profile-icon" aria-label="Profile">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ff69b4" viewBox="0 0 24 24">
@@ -19,7 +19,6 @@
             </a>
         </div>
     </nav>
-
     <div class="container">
         <div class="song-choices">
             <div class="card-with-caption">
@@ -113,29 +112,38 @@
                 </div>
             </div>
         </div>
-
-        <div class="bottom-card">
-            <img src="" alt="Album Cover" class="song-img">
-            <div class="song-info">
-                <div class="song-name">Current Song</div>
-                <div class="artist-name">Artist</div>
-                <div class="song-length">Length</div>
+        <div class="bottom-card-container">
+            <div class="bottom-card">
+                <img src="" alt="Album Cover" class="song-img">
+                <div class="song-info">
+                    <div class="song-name">Current Song</div>
+                    <div class="artist-name">Artist</div>
+                    <div class="song-length">Length</div>
+                </div>
             </div>
         </div>
-
         <div class="dj-background">
-            <img src="dj_bg2.png" alt="DJ Background" class="dj-bg-image">
+            <img src="dj_bg2.png" alt="DJ Background" width = "600" class="dj-bg-image">
         </div>
-
         <button class="end-set-btn">End Set</button>
-
+        </div>
         <!-- Add completion message container -->
-        <div id="completion-message" class="completion-message" style="display: none;">
-            <h2>Set Completed!</h2>
-            <p>Thank you for using djApp</p>
+    </div>
+    <div id="completion-message" class="completion-message" style="display: none;">
+        <h2>Set Progression</h2>
+        <div class="set-history">
+            <div class="history-header">
+                <div class="header-item">Song</div>
+                <div class="header-item">BPM</div>
+                <div class="header-item">Energy</div>
+            </div>
+            <div id="history-list" class="history-list">
+                <!-- History items will be added here dynamically -->
+            </div>
         </div>
     </div>
-
     <script src="script.js"></script>
+
+    
 </body>
 </html> 

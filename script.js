@@ -4,6 +4,7 @@ let cachedRecommendations = null;
 let lastRecommendationTime = 0;
 const MIN_RECOMMENDATION_INTERVAL = 15000; // 15 seconds between recommendation fetches
 let isUpdating = false; // Flag to prevent multiple simultaneous updates
+let setHistory = []; // Global array to store selected songs
 
 // Handle form submission on index page
 document.addEventListener('DOMContentLoaded', function() {
@@ -92,12 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Show completion message
                         const completionMessage = document.getElementById('completion-message');
                         if (completionMessage) {
-                            completionMessage.style.display = 'block';
+                            completionMessage.style.display = 'flex';
                         }
                         
                         // Hide other elements
                         document.querySelector('.song-choices').style.display = 'none';
                         document.querySelector('.bottom-card').style.display = 'none';
+                        document.querySelector('.dj-background').style.display = 'none';
                         endSetBtn.style.display = 'none';
                     }
                 } catch (error) {
@@ -114,6 +116,8 @@ function selectSong(card) {
     const artist = card.querySelector('.artist-name').textContent;
     const image = card.querySelector('.card-image').src;
     const duration = card.querySelector('.detail-item:nth-child(3) .detail-value').textContent;
+    const bpm = card.querySelector('.detail-item:nth-child(1) .detail-value').textContent;
+    const energy = card.querySelector('.detail-item:nth-child(4) .detail-value').textContent;
     
     // Update the bottom card immediately
     const bottomCard = document.querySelector('.bottom-card');
@@ -129,9 +133,14 @@ function selectSong(card) {
         title: title,
         artist: artist,
         image: image,
-        duration: duration
+        duration: duration,
+        bpm: bpm,
+        energy: energy
     };
     localStorage.setItem('currentSong', JSON.stringify(currentSong));
+    
+    // Push selected song to setHistory
+    setHistory.push(currentSong);
     
     // Show "Please wait..." in all recommendation cards
     const cards = document.querySelectorAll('.choice-card, .choice-card1, .choice-card2');
@@ -229,4 +238,40 @@ function updateRecommendationCards(recommendations) {
             }
         }
     });
+}
+
+function endSet() {
+    const completionMessage = document.getElementById('completion-message');
+    const historyList = document.getElementById('history-list');
+    
+    // Clear previous history
+    historyList.innerHTML = '';
+    
+    // Log the setHistory array for debugging
+    console.log('setHistory:', setHistory);
+    
+    // Add each song to the history
+    setHistory.forEach(song => {
+        // Log the image URL for debugging
+        console.log('Song image URL:', song.image);
+        
+        const historyItem = document.createElement('div');
+        historyItem.className = 'history-item';
+        
+        historyItem.innerHTML = `
+            <div class="song-info">
+                <img src="${song.image}" alt="${song.title}">
+                <div class="song-details">
+                    <div class="song-title">${song.title}</div>
+                    <div class="artist-name">${song.artist}</div>
+                </div>
+            </div>
+            <div class="bpm-value">${song.bpm}</div>
+            <div class="energy-value">${song.energy}</div>
+        `;
+        
+        historyList.appendChild(historyItem);
+    });
+    
+    completionMessage.style.display = 'flex';
 }
