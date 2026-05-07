@@ -10,3 +10,6 @@ amazon-web-services, aws-cli, bedrock, claude, css, flask, html, javascript, mat
 HOW TO USE:
 1. Download our files, and run either python3 backend.py or python backend.py on your terminal.
 2. A link through flask should pop up and you can command click that link to view our localhost website.
+
+<img width="1120" height="742" alt="Screenshot 2026-05-07 at 11 50 07 AM" src="https://github.com/user-attachments/assets/5b9a7f2e-e801-4055-b62c-db9ce80018d0" />
+
